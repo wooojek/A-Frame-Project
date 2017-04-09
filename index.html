@@ -2,9 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta charset="utf-8" name="description" content="WebVR - A-frame Project">
         <title>A-frame Project for fun!</title>
+
+        <script src=></script>
+        <script src='js/out.js'></script>
     </head>
     <body>
-        <p>Hello!</p>
+        <a-scene>
+            <a-entity position='0 2 -3' geometry='primitive: box; width: 1; height: 1; depth: 1' material='color: red'></a-entity>
+            <a-entity position='-2 2 -3' geometry='primitive: cone; width: 1; height: 3; depth: 1' material='color: yellow'></a-entity>
+            <a-entity position='2 2 -3' geometry='primitive: sphere; radius: 1;' material='color: green'></a-entity>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <a-plane rotation='-90 0 0' width='30' height='30' material='color: blue'></a-plane>
+            <a-sky color="#CCC"></a-sky>
+        </a-scene>
     </body>
 </html>
