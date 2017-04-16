@@ -11,13 +11,24 @@
     <body>
         <a-scene>
             <a-assets>
-                <img id="sky" src='#'>
+                <a-mixin id='red' material='color: #FF0000'></a-mixin>
+                <a-mixin id='black' material='color: #000000'></a-mixin>
+                <a-mixin id='box' geometry='primitive: box; width: 1; height: 1; depth: 1'></a-mixin>
+                <img id="skin" src='/assets/lux-skin07-magma-tx-cm.png'>
+                <!--model and texture from https://clara.io/view/90a4e4b2-ad23-44af-b012-dd16260f14cf-->
+                <a-asset-item id='character' src='/assets/avarice.dae'></a-asset-item>
             </a-assets>
 
-
-            <a-entity position='0 2 -3' geometry='primitive: box; width: 1; height: 1; depth: 1' material='color: red'></a-entity>
-            <a-entity position='-2 2 -3' geometry='primitive: cone; height: 3; radiusBottom: 2; radiusTop: 0.001' material='color: yellow;'></a-entity>
-            <a-entity position='2 2 -3' geometry='primitive: sphere; radius: 1;' material='color: green'></a-entity>
+            <a-entity position='-1.25 0.5 -3' mixin='red box'></a-entity>
+            <a-entity position='0 0.5 -3' mixin='black box'></a-entity>
+            <a-entity position='1.25 0.5 -3' mixin='red box'></a-entity>
+            <a-entity position='-1.25 1.75 -3' mixin='black box'></a-entity>
+            <a-entity position='0 1.75 -3' mixin='red box'></a-entity>
+            <a-entity position='1.25 1.75 -3' mixin='black box'></a-entity>
+            <a-entity position='-1.25 3 -3' mixin='red box'></a-entity>
+            <a-entity position='0 3 -3' mixin='black box'></a-entity>
+            <a-entity position='1.25 3 -3' mixin='red box'></a-entity>
+            <a-entity scale='0.5 0.5 0.5' collada-model="#character" material=''></a-entity>
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
