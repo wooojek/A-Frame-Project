@@ -11,24 +11,25 @@
     <body>
         <a-scene>
             <a-assets>
-                <a-mixin id='red' material='color: #FF0000'></a-mixin>
-                <a-mixin id='black' material='color: #000000'></a-mixin>
+                <a-mixin id='yellowish' material='color: #FFA500'></a-mixin>
+                <a-mixin id='black' material='color: #000'></a-mixin>
+                <a-mixin id='greenish' material='color: limegreen'></a-mixin>
                 <a-mixin id='box' geometry='primitive: box; width: 1; height: 1; depth: 1'></a-mixin>
             </a-assets>
 
-            <a-entity position='-1.25 0.5 -3' mixin='red box'></a-entity>
-            <a-entity position='0 0.5 -3' mixin='black box'></a-entity>
-            <a-entity position='1.25 0.5 -3' mixin='red box'></a-entity>
-            <a-entity position='-1.25 1.75 -3' mixin='black box'></a-entity>
-            <a-entity position='0 1.75 -3' mixin='red box'></a-entity>
-            <a-entity position='1.25 1.75 -3' mixin='black box'></a-entity>
-            <a-entity position='-1.25 3 -3' mixin='red box'></a-entity>
+            <a-entity position='-1.25 0.5 -3' mixin='yellowish box' onClick="screamToMe(this);" handle-events></a-entity>
+            <a-entity position='0 0.5 -3' mixin='black box' handle-events></a-entity>
+            <a-entity position='1.25 0.5 -3' mixin='greenish box' handle-events></a-entity>
+            <a-entity position='-1.25 1.75 -3' mixin='yellowish box'></a-entity>
+            <a-entity position='0 1.75 -3' mixin='black box'></a-entity>
+            <a-entity position='1.25 1.75 -3' mixin='greenish box'></a-entity>
+            <a-entity position='-1.25 3 -3' mixin='yellowish box'></a-entity>
             <a-entity position='0 3 -3' mixin='black box'></a-entity>
-            <a-entity position='1.25 3 -3' mixin='red box'></a-entity>
+            <a-entity position='1.25 3 -3' mixin='greenish box'></a-entity>
             <a-camera>
-                <a-cursor></a-cursor>
+                <a-cursor color='red'></a-cursor>
             </a-camera>
-            <a-plane rotation='-90 0 0' width='30' height='30' material='color: blue'></a-plane>
+            <a-plane rotation='-90 0 0' width='6' height='6' material='color: gray'></a-plane>
             <a-sky color='#ccc'></a-sky>
         </a-scene>
     </body>
