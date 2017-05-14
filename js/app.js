@@ -1,30 +1,18 @@
-let bufor = '';
+let bufor = null;
 let bufor2 = '';
 
 AFRAME.registerComponent('handle-events', {
     init: function() {
-        const el = this.el;
-        let buforElement = '';
-        let buforMixin = '';
+        let el = this.el;
+
 
         el.addEventListener('click', function () {
-            if(buforElement === '') {
-                console.log('entered ', buforElement, buforMixin);                
-                buforElement = el;
+                let buforMixin = '';
                 buforMixin = el.getAttribute('mixin');
                 bufor2 = bufor;
                 bufor = el;
-            } else {
-
-            }
-
-            console.log(bufor, bufor2);
+                console.log(buforMixin, bufor2 ? bufor2.getAttribute('mixin'): null);
+                el.setAttribute('mixin', bufor2 ? bufor2.getAttribute('mixin'): buforMixin);
         });
-
-        buforElement = '';
     }
 });
-
-function screamToMe(element) {
-    console.log(element);
-}
